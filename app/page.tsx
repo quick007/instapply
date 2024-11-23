@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+//why cant this find it 
 import LoginButton from "./dashboard/components/loginButton";
 <script src="https://unpkg.com/split-type"></script>;
 <link rel="icon" href="/favicon.ico" />
