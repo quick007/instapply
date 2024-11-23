@@ -1,7 +1,23 @@
-import Link from "next/link";
+"use client";
 
-export default function SubnavTab({ children, name }: { children: React.ReactNode, name: string }) {
-    return (
-        <Link href={`/dashboard/apps/${name}`} className="py-2 px-6 font-semibold bg-blue-100 rounded-t-lg">{children}</Link>
-    )
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+
+export default function SubnavTab({
+  children,
+  name,
+}: {
+  children: React.ReactNode;
+  name: string;
+}) {
+  const pathname = usePathname();
+
+  return (
+    <Link
+      href={`/dashboard/apps/${name}`}
+      className={`py-1.5 px-6 font-semibold rounded-t-lg ${pathname.includes(name) ? "bg-gray-800 text-white" : "bg-blue-50 text-gray-700"}`}
+    >
+      {children}
+    </Link>
+  );
 }
