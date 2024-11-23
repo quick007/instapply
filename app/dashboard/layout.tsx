@@ -1,18 +1,19 @@
 import Link from "next/link";
 import SubnavTab from "./components/subnavTab";
 
-export default function Layout(children: React.ReactNode) {
+export default function Layout({children}: {children: React.ReactNode}) {
     return (
-        <>
-            <nav className="w-screen bg-red-100 h-20">
-                NavBar
+        <main>
+            <nav className="w-screen bg-blue-50 h-20 mb-5">
+                <img src = "/file.png" alt = "Logo Image" className="h-20"/>
             </nav>
-            <div>
-                {/* <image href = "/public/file.png">logoImage</image> */}
-            </div>
-            <div className="flex gap-10">
+            
+            <div className="flex gap-5 mb-5">
                 <SubnavTab href="/dashboard/recommended">Recommended</SubnavTab>
+                <SubnavTab href="/dashboard/applied">Applied</SubnavTab>
+                <SubnavTab href="/dashboard/responded">Responded</SubnavTab>
             </div>
-        </>
+            {children}
+        </main>
     )
 }
