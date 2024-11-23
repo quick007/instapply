@@ -1,5 +1,8 @@
-import Profile from "./dashboard/components/profile";
+//why cant this find it something fix ple
+//import Profile from "./dashboard/components/profile";
+import { Metadata } from "next";
 
+export const metadata: Metadata = {};
 export default function homePage() {
   return (
     <div>
@@ -13,7 +16,7 @@ export default function homePage() {
           <h2 className="text-[#20283d] font-bold text-xl mt-5 mb-10">
             Internships await.
           </h2>
-          <Profile />
+       
         </div>
       </main>
     </div>
