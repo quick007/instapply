@@ -9,7 +9,7 @@ export default function Page() {
           <UploadPopup />
         </div>
         <ul >
-          <ClassTab />
+          course 1
         </ul>
       </div>
       <div className="grow">
