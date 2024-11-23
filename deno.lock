@@ -2585,6 +2585,7 @@
   "workspace": {
     "packageJson": {
       "dependencies": [
+        "npm:@auth0/nextjs-auth0@^3.5.0",
         "npm:@headlessui/react@^2.2.0",
         "npm:@heroicons/react@^2.2.0",
         "npm:@supabase/ssr@~0.5.2",

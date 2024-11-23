@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import LoginButton from "./dashboard/components/loginButton";
 <script src="https://unpkg.com/split-type"></script>;
+<link rel="icon" href="/favicon.ico" />
 
 export const metadata: Metadata = {};
 

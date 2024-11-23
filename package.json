@@ -10,6 +10,7 @@
     "types": "supabase gen types --lang=typescript --project-id 'ogxemeldsvetooampdxa' --schema public > database.types.ts"
   },
   "dependencies": {
+    "@auth0/nextjs-auth0": "^3.5.0",
     "@headlessui/react": "^2.2.0",
     "@heroicons/react": "^2.2.0",
     "@supabase/ssr": "^0.5.2",
