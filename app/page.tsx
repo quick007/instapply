@@ -31,9 +31,9 @@ export default function Home() {
 
 const LoginOrDash = async () => {
   const supabase = await createClient();
-  const user = await supabase.auth.getUser();
+  const { data, error} = await supabase.auth.getUser();
 
-  if (!user) {
+  if (error || !data.user) {
     return <LoginButton />;
   }
 
