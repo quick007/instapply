@@ -12,7 +12,7 @@ export default async function Page() {
   }
 
   const { data, error: fetchError } = await supabase.from("profiles").select(
-    "id, made_profile",
+    "id, made_profile, first_name",
   ).eq("id", user.id).single();
 
   if (fetchError || !data) {
@@ -35,13 +35,12 @@ export default async function Page() {
       </div>
     );
   }
-  let name = "Noam";
 
   return (
     <div className="flex items-center justify-center grow">
       <div className="flex flex-col items-center gap-4">
         <h1 className="text-4xl font-semibold text-primary-verydark">
-          Hello, {name}!
+          Hello, {data.first_name}!
         </h1>
         <h2 className="text-primary-verydark">Let's continue with your applications!</h2>
         <div className="flex justify-evenly gap-4 text-xl">
