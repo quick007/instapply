@@ -6,9 +6,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "types": "supabase gen types --lang=typescript --project-id 'ogxemeldsvetooampdxa' --schema public > database.types.ts"
   },
   "dependencies": {
+    "@headlessui/react": "^2.2.0",
     "@supabase/ssr": "^0.5.2",
     "@supabase/supabase-js": "^2.46.1",
     "next": "15.0.3",
