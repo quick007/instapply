@@ -7,7 +7,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <nav className="w-screen bg-blue-50 h-20 mb-5 flex justify-between items-center px-4">
         <div>
             <img src="/file.png" alt="Logo Image" className="h-20"/>
-            <h1 className="text-[#20283d] font-bold text-7xl">InstApply</h1>
+            <h1 className="text-[#20283d] font-bold text-2xl">InstApply</h1>
         </div>
         <Link href="/dashboard/profile">
           <div className="rounded-full p-2 bg-blue-200">
