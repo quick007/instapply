@@ -9,8 +9,7 @@ export default function Page() {
           <UploadPopup />
         </div>
         <ul >
-          <li>Meth 252</li>
-          <li>WR 121</li>
+          <ClassTab />
         </ul>
       </div>
       <div className="grow">
