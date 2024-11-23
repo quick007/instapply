@@ -2,6 +2,7 @@
   "version": "4",
   "specifiers": {
     "npm:@headlessui/react@^2.2.0": "2.2.0_react@19.0.0-rc-66855b96-20241106_react-dom@19.0.0-rc-66855b96-20241106__react@19.0.0-rc-66855b96-20241106",
+    "npm:@heroicons/react@^2.2.0": "2.2.0_react@19.0.0-rc-66855b96-20241106",
     "npm:@supabase/ssr@~0.5.2": "0.5.2_@supabase+supabase-js@2.46.1",
     "npm:@supabase/supabase-js@^2.46.1": "2.46.1",
     "npm:@types/node@20": "20.17.6",
@@ -96,6 +97,12 @@
         "@tanstack/react-virtual",
         "react@19.0.0-rc-66855b96-20241106",
         "react-dom@19.0.0-rc-66855b96-20241106_react@19.0.0-rc-66855b96-20241106"
+      ]
+    },
+    "@heroicons/react@2.2.0_react@19.0.0-rc-66855b96-20241106": {
+      "integrity": "sha512-LMcepvRaS9LYHJGsF0zzmgKCUim/X3N/DQKc4jepAXJ7l8QxJ1PmxJzqplF2Z3FE4PqBAIGyJAQ/w4B5dsqbtQ==",
+      "dependencies": [
+        "react@19.0.0-rc-66855b96-20241106"
       ]
     },
     "@humanwhocodes/config-array@0.13.0": {
@@ -2579,6 +2586,7 @@
     "packageJson": {
       "dependencies": [
         "npm:@headlessui/react@^2.2.0",
+        "npm:@heroicons/react@^2.2.0",
         "npm:@supabase/ssr@~0.5.2",
         "npm:@supabase/supabase-js@^2.46.1",
         "npm:@types/node@20",
