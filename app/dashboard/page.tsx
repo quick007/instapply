@@ -12,7 +12,7 @@ export default function Page() {
           course 1
         </ul>
       </div>
-      <div className="grow">
+      <div className="grow text-pri">
         main content
         
       </div>
