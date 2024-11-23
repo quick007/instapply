@@ -14,8 +14,17 @@ module.exports = {
           darkish: "#4e7980",
           verydark: "#20283d"
         }
+      },
+      keyframes: {
+        appear: {
+          '0%, 100%': { transform: 'translateY(600%)' },
+        }
+      },
+      animation : {
+        appear: 'appear into screen',
       }
     },
   },
+
   plugins: [],
 };
