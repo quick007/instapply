@@ -39,7 +39,7 @@ const LoginOrDash = async () => {
 
   return (
     <Link
-      href="/dashboard/apps/recommended"
+      href="/dashboard"
       className="rounded-md bg-primary-light text-primary-verydark w-52 h-10 font-bold animate-appear flex items-center justify-center"
     >
       Dashboard

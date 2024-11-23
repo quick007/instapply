@@ -12,19 +12,19 @@ module.exports = {
           light: "#e0f2e6",
           medium: "#68b4a4",
           darkish: "#4e7980",
-          verydark: "#20283d"
-        }
+          verydark: "#20283d",
+        },
       },
       keyframes: {
         appear: {
-          '0%, 100%': { transform: 'translateY(600%)' },
-        }
+          "0%, 100%": { transform: "translateY(600%)" },
+        },
       },
-      animation : {
-        appear: 'appear into screen',
-      }
+      animation: {
+        appear: "appear into screen",
+      },
     },
   },
 
-  plugins: [],
+  plugins: [require("@tailwindcss/forms")],
 };
