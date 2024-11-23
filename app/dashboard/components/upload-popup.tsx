@@ -5,10 +5,20 @@ import {
   DialogPanel,
   DialogTitle,
 } from "@headlessui/react";
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 export default function UploadPopup() {
   const [isOpen, setIsOpen] = useState(false);
+
+  const Uploader = () => {
+		const drop = useRef<HTMLDivElement>(null)
+    return (
+      <div ref={drop}>
+        <p>Drag & drop your syllabus here</p>
+        
+      </div>
+    );
+  };
 
   return (
     <>
@@ -38,12 +48,11 @@ export default function UploadPopup() {
             <DialogTitle className="font-bold">Enter your syllabus</DialogTitle>
             <Description>Drag and Drop the syllabus for you class</Description>
             <p>
-              Are you sure you want to deactivate your account? All of your data
-              will be permanently removed.
+              <Uploader />
             </p>
             <div className="flex gap-4">
               <button onClick={() => setIsOpen(false)}>Cancel</button>
-              <button onClick={() => setIsOpen(false)}>Deactivate</button>
+              <button onClick={() => setIsOpen(false)}>Confirm</button>
             </div>
           </DialogPanel>
         </div>
