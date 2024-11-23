@@ -3,7 +3,7 @@ import SubnavTab from "./apps/components/subnavTab";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <main>
+    <main className="min-h-screen bg-gray-50 flex flex-col">
       <nav className="w-screen bg-blue-50 h-20 mb-5 flex justify-between items-center px-4">
         <img src="/file.png" alt="Logo Image" className="h-20" />
         <Link href="/dashboard/profile">
