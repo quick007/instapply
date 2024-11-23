@@ -3,5 +3,5 @@ export default function Login() {
   }
 
 exports.onExecutePostLogin = async (event, api) => {
-  api.redirect.sendUserTo("http://localhost:3000/home");
+  api.redirect.sendUserTo("http://localhost:3000/dashboard");
   };
