@@ -5,17 +5,17 @@ export default function ApplicationColumn({children, size} : {children: React.Re
     let actualSize = "";
     switch(size) {
         case "sm":
-            actualSize = "w-300";
+            actualSize = "w-40";
             break;
         case "lg":
-            actualSize = "w-500";
+            actualSize = "w-64";
             break;
         case "fill":
             actualSize = "grow";
             break;
     }
     return (
-        <main className={`bg-primary-darkish text-primary-light mb-3 ${actualSize}`}>
+        <main className={`text-primary-darkish mb-3 ${actualSize} font-semibold py-1 px-4`}>
             {children}
         </main>
     )

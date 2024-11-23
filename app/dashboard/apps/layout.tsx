@@ -9,11 +9,11 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <SubnavTab name="applied">Applied</SubnavTab>
         <SubnavTab name="responded">Responded</SubnavTab>
       </div>
-      <div className="flex justify-start border-none rounded-lg p-4 gap-10">
+      <div className="flex justify-start  border-none rounded-lg p-4 gap-10">
         <ApplicationColumn size = "fill">Company</ApplicationColumn>
         <ApplicationColumn size = "fill">Position</ApplicationColumn>
         <ApplicationColumn size = "lg">Location</ApplicationColumn>
-        <ApplicationColumn size = "sm">Custom</ApplicationColumn>
+        <ApplicationColumn size = "lg">Notes</ApplicationColumn>
         <ApplicationColumn size = "lg">Link</ApplicationColumn>
       </div>
       {children}
