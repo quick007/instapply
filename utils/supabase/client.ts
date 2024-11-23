@@ -1,4 +1,5 @@
 import { createBrowserClient } from '@supabase/ssr'
+// import supabase
 
 export function createClient() {
   return createBrowserClient(
@@ -6,3 +7,10 @@ export function createClient() {
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
   )
 }
+
+// await supabase.auth.signInWithOAuth({
+//   provider,
+//   options: {
+//     redirectTo: `http://example.com/auth/callback`,
+//   },
+// })
