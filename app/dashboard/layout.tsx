@@ -1,17 +1,34 @@
 import Link from "next/link";
 import SubnavTab from "./apps/components/subnavTab";
+import CurrPage from "./components/currPage";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <main className="min-h-screen bg-gray-50 flex flex-col">
-      <nav className=" bg-blue-50 h-20 mb-5 flex justify-between items-center px-4">
-        <div className="flex items-center">
-          <img src="/file.png" alt="Logo Image" className="h-20" />
-          <h1 className="text-[#20283d] font-bold text-2xl">InstApply</h1>
+      <nav className=" bg-blue-50 h-16 mb-5 flex justify-between items-center px-4">
+        <div className="flex items-center grow">
+          <Link href="/">
+            <img src="/file.png" alt="Logo Image" className="h-12" />
+            <h1 className="text-gray-800 font-bold">InstApply</h1>
+          </Link>
+
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 16 16"
+            fill="currentColor"
+            className="size-4 mx-2"
+          >
+            <path
+              fillRule="evenodd"
+              d="M6.22 4.22a.75.75 0 0 1 1.06 0l3.25 3.25a.75.75 0 0 1 0 1.06l-3.25 3.25a.75.75 0 0 1-1.06-1.06L8.94 8 6.22 5.28a.75.75 0 0 1 0-1.06Z"
+              clipRule="evenodd"
+            />
+          </svg>
+
+          <CurrPage />
         </div>
         <div className="flex items-center">
-          <h1 className="text-[#20283d] font-bold text-2xl">Dashboard</h1>
-        </div>
+
         <Link href="/dashboard/profile">
           <div className="rounded-full p-2 bg-blue-200 ml-44">
             <svg
@@ -29,8 +46,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               />
             </svg>
           </div>
-          </Link>
-
+        </Link></div>
       </nav>
       {children}
     </main>
