@@ -1,7 +1,6 @@
 "use client"
 
 import Link from "next/link";
-import Example from "./components/notificationBell.jsx";
 import { AnimatePresence, motion } from "motion/react";
 import React, { useState } from "react";
 
