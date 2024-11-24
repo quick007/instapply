@@ -3,8 +3,8 @@ import SubnavTab from "./apps/components/subnavTab";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <main className="min-h-screen bg-gray-50 flex flex-col">
-      <nav className=" bg-blue-50 h-20 mb-5 flex justify-between items-center px-4">
+    <main className="min-h-screen flex flex-col">
+      <nav className=" bg-primary-light h-20 flex justify-between items-center px-4">
         <div className="flex items-center">
           <img src="/file.png" alt="Logo Image" className="h-20" />
           <h1 className="text-[#20283d] font-bold text-2xl">InstApply</h1>

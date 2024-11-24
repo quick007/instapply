@@ -21,7 +21,7 @@ export default async function Page() {
 
   if (!data.made_profile) {
     return (
-      <div className="flex flex-col items-center justify-center mt-44">
+      <div className="flex flex-col items-center justify-center mt-44 bg-gradient-to-t from-primary-darkish to-primary-light">
         <h1 className="font-semibold text-7xl flex mb-10">Create your profile</h1>
         <div className="flex items-center justify-center">
           <img src="/businessMan.svg" className="h-72" />
@@ -40,7 +40,7 @@ export default async function Page() {
   }
 
   return (
-    <div className="flex items-center justify-center grow">
+    <div className="flex items-center justify-center grow bg-gradient-to-t from-primary-darkish to-primary-light">
       <div className="flex flex-col items-center gap-4">
         <h1 className="text-4xl font-semibold text-primary-verydark">
           Hello, {data.first_name}!
