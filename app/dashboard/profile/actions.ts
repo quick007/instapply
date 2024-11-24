@@ -16,13 +16,13 @@ export const updateProfile = async (
 		// resume: formData.get("resume") as File | null,
 		// coverLetter: formData.get("cover_letter") as File | null,
 		github: formData.get("github")?.toString() || "",
-		linkedIn: formData.get("linkedIn")?.toString() || "",
+		linkedIn: formData.get("linked_in")?.toString() || "",
 		website: formData.get("website")?.toString() || "",
 		phone: formData.get("phone")?.toString() || "",
 		gender: formData.get("gender")?.toString() || "",
 		hispanicLatino: formData.get("hispanic_latino")?.toString() || "",
-		veteranStatus: formData.get("veteran_status")?.toString() || "",
-		disabilityStatus: formData.get("disability_status")?.toString() || "",
+		veteranStatus: formData.get("veteran")?.toString() || "",
+		disabilityStatus: formData.get("disability")?.toString() || "",
 	};
 
 	const formSchema = z.object({

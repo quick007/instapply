@@ -9,10 +9,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           <img src="/file.png" alt="Logo Image" className="h-20" />
           <h1 className="text-[#20283d] font-bold text-2xl">InstApply</h1>
         </div>
-        <div>
-          <img src="/file.png" alt="Logo Image" className="h-20" />
-          <h1 className="text-[#20283d] font-bold text-2xl">InstApply</h1>
-        </div>
         <div className="flex items-center">
           <h1 className="text-[#20283d] font-bold text-2xl">Dashboard</h1>
         </div>

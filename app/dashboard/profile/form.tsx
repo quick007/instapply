@@ -63,24 +63,24 @@ export default function Form({data}: {data: Database["public"]["Tables"]["profil
 
         <br></br>
 				<h2 className="text-3xl font-bold mb-4">Job-Specific Info</h2>
-{/* 
-        <label htmlFor="resume">Resume</label>
+
+        {/* <label htmlFor="resume">Resume</label>
         <input type="file" id="resume" />
 
         <label htmlFor="cover_letter">Cover Letter</label>
         <input type="file" id="cover_letter" /> */}
 
         <label htmlFor="github">Github</label>
-        <input type="text" id="github"  defaultValue={data.github || ""}/>
+        <input type="text" id="github" name="github"  defaultValue={data.github || ""}/>
 
-        <label htmlFor="linkedIn">LinkedIn</label>
-        <input type="text" id="linked_in" defaultValue={data.linked_in || ""}/>
+        <label htmlFor="linked_in">LinkedIn</label>
+        <input type="text" id="linked_in" name="linked_in" defaultValue={data.linked_in || ""}/>
 
         <label htmlFor="website">Website</label>
-        <input type="text" id="website" defaultValue={data.website || ""}/>
+        <input type="text" id="website" name="website" defaultValue={data.website || ""}/>
 
         <label htmlFor="phone">Phone Number</label>
-        <input type="text" id="phone" defaultValue={data.phone || ""}/>
+        <input type="text" id="phone" name="phone" defaultValue={data.phone || ""}/>
         
             <br></br>
 				<h2 className="text-3xl font-bold mb-4">Voluntary Self-Id</h2>
