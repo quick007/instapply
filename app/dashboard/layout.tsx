@@ -1,6 +1,4 @@
 import Link from "next/link";
-import SubnavTab from "./apps/components/subnavTab";
-import CurrPage from "./components/currPage";
 import NotificationBell from "./components/notificationBell";
 
 
