@@ -1,0 +1,10 @@
+{
+  "tasks": {
+    "dev": "deno run --watch main.ts"
+  },
+  "imports": {
+    "@ai-sdk/azure": "npm:@ai-sdk/azure@^1.0.5",
+    "@std/assert": "jsr:@std/assert@1",
+    "ai": "npm:ai@^4.0.3"
+  }
+}
