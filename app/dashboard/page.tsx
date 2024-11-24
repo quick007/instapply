@@ -19,17 +19,20 @@ export default async function Page() {
     return redirect("/");
   }
 
-  if (!data.made_profile && false) {
+  if (!data.made_profile) {
     return (
-      <div className="flex items-center justify-center grow">
-        <img src="/businessMan.svg" className="h-72" />
-        <div className="p-10 shadow-md flex flex-col items-center rounded-lg max-w-xl">
-          <h2>Create your profile</h2>
-          <Link
-            href="/dashboard/profile"
-            className="rounded-md bg-gray-800 text-white font-medium px-8 py-2 shadow"
-          >
-            Let's go
+      <div className="flex flex-col items-center justify-center mt-44">
+        <h1 className="font-semibold text-7xl flex mb-10">Create your profile</h1>
+        <div className="flex items-center justify-center">
+          <img src="/businessMan.svg" className="h-72" />
+          <Link href="/dashboard/profile">
+            <div className="p-10 shadow-lg flex flex-col items-center rounded-full max-w-xl bg-primary-light animate-bounce">
+
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+              </svg>
+
+            </div>
           </Link>
         </div>
       </div>

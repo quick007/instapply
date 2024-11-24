@@ -4,16 +4,16 @@ import SubnavTab from "./apps/components/subnavTab";
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <main className="min-h-screen bg-gray-50 flex flex-col">
-      <nav className="w-screen bg-blue-50 h-20 mb-5 flex justify-between items-center px-4">
-        <div className = "flex items-center">
-            <img src="/file.png" alt="Logo Image" className="h-20"/>
-            <h1 className="text-[#20283d] font-bold text-2xl">InstApply</h1>
-        </div>
-        <div className = "flex items-center">
+      <nav className="w-screen bg-blue-50 h-20 flex justify-between items-center px-4">
+      <div className="flex items-center">
+          <img src="/file.png" alt="Logo Image" className="h-20" />
+          <h1 className="text-[#20283d] font-bold text-2xl">InstApply</h1>
+      </div>
+        <div className="flex items-center">
           <h1 className="text-[#20283d] font-bold text-2xl">Dashboard</h1>
         </div>
         <Link href="/dashboard/profile">
-          <div className="rounded-full p-2 bg-blue-200">
+          <div className="rounded-full p-2 bg-blue-200 ml-44">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -29,7 +29,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               />
             </svg>
           </div>
-        </Link>
+          </Link>
+
       </nav>
       {children}
     </main>

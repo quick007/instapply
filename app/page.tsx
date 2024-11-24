@@ -13,7 +13,6 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <div>
-      <header></header>
       <main className="bg-gradient-to-t from-[#68b4a4] to-white">
         <div className="w-screen h-screen flex justify-center items-center flex-col">
           <h1 className="text-[#20283d] font-bold text-7xl">InstApply</h1>
