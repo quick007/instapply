@@ -1,6 +1,7 @@
 {
   "deno.enablePaths": [
-    "supabase/functions"
+    "supabase/functions",
+    "parser"
   ],
   "deno.unstable": true,
   "[typescript]": {
