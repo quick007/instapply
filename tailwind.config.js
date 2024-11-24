@@ -15,13 +15,14 @@ module.exports = {
           verydark: "#20283d",
         },
       },
+      animation: {
+        appear: "appear 1s ease-out",
+      },
       keyframes: {
         appear: {
-          "0%, 100%": { transform: "translateY(600%)" },
+          "0%": { transform: "translateY(500px)", opacity: "0" },
+          "100%": { transform: "translateY(0)", opacity: "1" },
         },
-      },
-      animation: {
-        appear: "appear into screen",
       },
     },
   },
