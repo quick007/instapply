@@ -13,7 +13,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           <h1 className="text-[#20283d] font-bold text-2xl">Dashboard</h1>
         </div>
         <Link href="/dashboard/profile">
-          <div className="rounded-full p-2 bg-blue-200">
+          <div className="rounded-full p-2 bg-blue-200 ml-44">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -29,7 +29,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               />
             </svg>
           </div>
-        </Link>
+          </Link>
+
       </nav>
       {children}
     </main>
