@@ -22,6 +22,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/dashboard/components/notificationBell.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/dashboard/components/notificationBell.tsx", "app/dashboard/apps/notification_test/page.jsx", "app/dashboard/components/notificationBell.jsx"],
   "exclude": ["node_modules"]
 }
