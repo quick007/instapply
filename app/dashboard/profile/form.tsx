@@ -45,8 +45,8 @@ export default function Form({data}: {data: Database["public"]["Tables"]["profil
         <label htmlFor="school">School</label>
         <input type="text" name="school" defaultValue={data.school || ""} />
 
-        <label htmlFor="languages">Languages - select with ctrl + click</label>
-        <select name="languages" id="languages" defaultValue={data.languages || ""} multiple>
+        <label htmlFor="languages">Languages - select with ctrl + click <span className="text-red-500">*</span></label>
+        <select name="languages" id="languages" required defaultValue={data.languages || ""} multiple>
           <option value="Python">Python</option>
           <option value="Javascript">Javascript</option>
           <option value="Java">Java</option>
