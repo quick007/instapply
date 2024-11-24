@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import React, { useState } from "react";
 import { Menu } from "@headlessui/react";
@@ -29,7 +29,12 @@ export default function NotificationCenter() {
                     d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0"
                 />
             </svg>
-            <FlyoutNotification NotificationContent={<NotificationContent></NotificationContent>}></FlyoutNotification>
+            <FlyoutNotification
+                NotificationContent={
+                    <NotificationContent></NotificationContent>
+                }
+            >
+            </FlyoutNotification>
         </div>
     );
 }
@@ -38,13 +43,17 @@ const NotificationContent = () => {
     return (
         <div className="w-64 bg-white p-6 shadow-xl">
             <div className="mb-3 space-y-3">
-                <h3 className="font-semibold">You have no new notifications.</h3>
+                <h3 className="font-semibold">
+                    You have no new notifications.
+                </h3>
             </div>
         </div>
-    )
-}
+    );
+};
 
-const FlyoutNotification = ({NotificationContent } : {NotificationContent: React.ReactNode}) => {
+const FlyoutNotification = (
+    { NotificationContent }: { NotificationContent: React.ReactNode },
+) => {
     const [open, setOpen] = useState(false);
 
     const showFlyout = NotificationContent && open;
@@ -55,6 +64,14 @@ const FlyoutNotification = ({NotificationContent } : {NotificationContent: React
             onMouseLeave={() => setOpen(false)}
             className="relative w-fit h-fit"
         >
+            <a className="relative text-white">
+                <span
+                    style={{
+                        transform: showFlyout ? "scaleX(1)" : "scaleX(0)",
+                    }}
+                    className="absolute -bottom-2 -left-2 -right-2 h-1 origin-left scale-x-0 rounded-full bg-indigo-300 transition-transform duration-300 ease-out"
+                />
+            </a>
             <AnimatePresence>
                 {showFlyout && (
                     <motion.div
@@ -70,6 +87,6 @@ const FlyoutNotification = ({NotificationContent } : {NotificationContent: React
                     </motion.div>
                 )}
             </AnimatePresence>
-        </div >
+        </div>
     );
 };
