@@ -45,6 +45,25 @@ export default function Form({data}: {data: Database["public"]["Tables"]["profil
         <label htmlFor="school">School</label>
         <input type="text" name="school" defaultValue={data.school || ""} />
 
+        <label htmlFor="languages">Languages - select with ctrl + click</label>
+        <select name="languages" id="languages" defaultValue={data.languages || ""} multiple>
+          <option value="Python">Python</option>
+          <option value="Javascript">Javascript</option>
+          <option value="Java">Java</option>
+          <option value="HTML">HTML</option>
+          <option value="Rust">Rust</option>
+          <option value="C">C</option>
+          <option value="C#">C#</option>
+          <option value="C++">C++</option>
+          <option value=".NET">.NET</option>
+          <option value="React">React</option>
+          <option value="CSS">CSS</option>
+          <option value="Kotlin">Kotlin</option>
+          <option value="google_cloud">Google Cloud</option>
+          <option value="AWS">AWS</option>
+
+        </select>
+
         <label htmlFor="major">Major</label>
         <select name="major" id="major" defaultValue={data.major || ""}>
           <option value=""></option>
