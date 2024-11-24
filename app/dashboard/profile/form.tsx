@@ -3,6 +3,7 @@
 import { useState, useTransition } from "react";
 import { updateProfile } from "./actions";
 import { Database, Tables } from "@/database.types";
+import { redirect } from "next/navigation";
 
 export default function Form({data}: {data: Database["public"]["Tables"]["profiles"]["Row"]}) {
 	const [isPending, startTransition] = useTransition();
@@ -19,6 +20,7 @@ export default function Form({data}: {data: Database["public"]["Tables"]["profil
 				if (data.success) {
 					setSaved(true)
 					setTimeout(() => setSaved(false), 1000)
+          return redirect("/dashboard");
 				} else {
 					setError(data.error || "An unknown error occured")
 				}
@@ -117,7 +119,7 @@ export default function Form({data}: {data: Database["public"]["Tables"]["profil
           <option value="decline">I do not want to answer</option>
         </select>
 
-				<button type="submit" disabled={isPending} className="rounded-md bg-gray-800 disabled:brightness-75 disabled:cursor-not-allowed text-white font-medium px-8 py-2 shadow mt-8">{saved ? "Saved!" : "Save"}</button>
+				<button type="submit" disabled={isPending} className="rounded-md bg-primary-verydark disabled:brightness-75 disabled:cursor-not-allowed text-white font-medium px-8 py-2 shadow mt-8">{saved ? "Saved!" : "Save"}</button>
 				{error && <p className="text-red-500">{error}</p>}
 
       </form>
