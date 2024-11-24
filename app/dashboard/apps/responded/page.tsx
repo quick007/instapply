@@ -1,5 +1,9 @@
+import ApplicationManager from "../components/applicationManager";
+
 export default function Page() {
 	return (
-		"responded!!"
+		<>
+			<ApplicationManager applications={[]}/>
+		</>
 	)
 }

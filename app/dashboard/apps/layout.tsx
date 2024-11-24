@@ -1,4 +1,5 @@
 import ApplicationColumn from "./components/applicationColumn";
+import ApplicationManager from "./components/applicationManager";
 import SubnavTab from "./components/subnavTab";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
@@ -8,13 +9,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <SubnavTab name="recommended">Recommended</SubnavTab>
         <SubnavTab name="applied">Applied</SubnavTab>
         <SubnavTab name="responded">Responded</SubnavTab>
-      </div>
-      <div className="flex justify-start  border-none rounded-lg p-4 gap-10">
-        <ApplicationColumn size = "fill">Company</ApplicationColumn>
-        <ApplicationColumn size = "fill">Position</ApplicationColumn>
-        <ApplicationColumn size = "lg">Location</ApplicationColumn>
-        <ApplicationColumn size = "lg">Notes</ApplicationColumn>
-        <ApplicationColumn size = "lg">Link</ApplicationColumn>
       </div>
       {children}
     </div>
