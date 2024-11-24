@@ -17,7 +17,7 @@ export default function Home() {
       <main className="bg-gradient-to-t from-[#68b4a4] to-white">
         <div className="w-screen h-screen flex justify-center items-center flex-col">
           <h1 className="text-[#20283d] font-bold text-7xl">InstApply</h1>
-          <h2 className="text-[#20283d] font-bold text-xl mt-5 mb-10">
+          <h2 className="text-[#20283d] font-bold text-xl mt-5 mb-10 ">
             Job Application Made Easy.
           </h2>
           <Suspense fallback={"Loading..."}>
