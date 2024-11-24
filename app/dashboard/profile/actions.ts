@@ -12,7 +12,7 @@ export const updateProfile = async (
 		email: formData.get("email")?.toString() || "",
 		school: formData.get("school")?.toString() || "",
 		major: formData.get("major")?.toString() || "",
-		gradYear: formData.get("gradYear")?.toString() || "",
+		gradYear: formData.get("grad_year")?.toString() || "",
 		// resume: formData.get("resume") as File | null,
 		// coverLetter: formData.get("cover_letter") as File | null,
 		github: formData.get("github")?.toString() || "",
@@ -25,7 +25,7 @@ export const updateProfile = async (
 		disabilityStatus: formData.get("disability_status")?.toString() || "",
 	};
 
-	// const formSchema = z.object({
+	const formSchema = z.object({
 	//  	first_name: z
 	//  	.string()
 	// 	.min(1, { message: "First name is required." })

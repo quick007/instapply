@@ -41,7 +41,7 @@ export default function Form({data}: {data: Database["public"]["Tables"]["profil
         <input type="text" name="email" required defaultValue={data.email || ""} />
 
         <label htmlFor="school">School</label>
-        <input type="text" id="school" defaultValue={data.school || ""} />
+        <input type="text" name="school" defaultValue={data.school || ""} />
 
         <label htmlFor="major">Major</label>
         <select name="major" id="major" defaultValue={data.major || ""}>
@@ -88,33 +88,33 @@ export default function Form({data}: {data: Database["public"]["Tables"]["profil
 				<label htmlFor="gender">Gender</label>
         <select name="gender" id="gender" defaultValue={data.gender || ""}>
           <option value=""></option>
-          <option value="gender">Male</option>
-          <option value="gender">Female</option>
-          <option value="gender">Decline to Self Identify</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+          <option value="decline">Decline to Self Identify</option>
         </select>
 
 				<label htmlFor="hispanic_latino">Are you Hispanic/Latino?</label>
         <select name="hispanic_latino" id="hpa" defaultValue={data.hpa || ""}>
           <option value=""></option>
-          <option value="hispanic_latino">Yes</option>
-          <option value="hispanic_latino">No</option>
-          <option value="hispanic_latino">Decline to Self Identify</option>
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+          <option value="decline">Decline to Self Identify</option>
         </select>
 
 				<label htmlFor="veteran">Veteran Status</label>
         <select name="veteran" id="veteran" defaultValue={data.veteran || ""}>
           <option value=""></option>
-          <option value="veteran">I am not a protected veteran</option>
-          <option value="veteran">I identify as one or more of the classifications of a protected veteran</option>
-          <option value="veteran">I don't wish to answer</option>
+          <option value="no">I am not a protected veteran</option>
+          <option value="yes">I identify as one or more of the classifications of a protected veteran</option>
+          <option value="decline">I don't wish to answer</option>
         </select>
 
 				<label htmlFor="disability">Disability</label>
         <select name="disability" id="disability" defaultValue={data.disability || ""}>
           <option value=""></option>
-          <option value="disability">Yes, I have a disability, or have had one in the past</option>
-          <option value="disability">No, I do not have a disability and have not had one in the past</option>
-          <option value="disability">I do not want to answer</option>
+          <option value="yes">Yes, I have a disability, or have had one in the past</option>
+          <option value="no">No, I do not have a disability and have not had one in the past</option>
+          <option value="decline">I do not want to answer</option>
         </select>
 
 				<button type="submit" disabled={isPending} className="rounded-md bg-gray-800 disabled:brightness-75 disabled:cursor-not-allowed text-white font-medium px-8 py-2 shadow mt-8">{saved ? "Saved!" : "Save"}</button>
