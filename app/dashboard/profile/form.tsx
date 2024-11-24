@@ -73,13 +73,26 @@ export default function Form({data}: {data: Database["public"]["Tables"]["profil
           <option value="Cyber Security">Cybersecurity</option>
         </select>
 
+        <label htmlFor="degree">Highest Degree Level</label>
+        <select name="degree" id="degree" defaultValue={data.degree || ""}>
+          <option value=""></option>
+          <option value="noDegree">No Degree</option>
+          <option value="BS">BS/BA</option>
+          <option value="MS">MS/MA</option>
+          <option value="PhD">PhD</option>
+          <option value="">High School Diploma</option>
+          <option value="Cyber Security">AS/AA</option>
+        </select>
+
         <label htmlFor="grad_year">Graduation Year</label>
         <select name="grad_year" id="grad_year" defaultValue={data.grad_year || ""}>
           <option value=""></option>
+          <option value="2028">Graduated</option>
           <option value="2025">2025</option>
           <option value="2026">2026</option>
           <option value="2027">2027</option>
           <option value="2028">2028</option>
+          <option value="2028">2029</option>
         </select>
 
         <br></br>

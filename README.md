@@ -3,7 +3,7 @@
 
 BeaverHacks Fall 2024 project
 
-Instapply
+Instapplyg
 
 npm i
 npm i --force
