@@ -46,8 +46,9 @@ export default async function Page() {
           Hello, {data.first_name}!
         </h1>
         <h2 className="text-primary-verydark">Let's continue with your applications!</h2>
-        <div className="flex justify-evenly gap-4 text-xl">
+        <div className="flex justify-center gap-4 text-xl">
           <DashboardInfo href="/dashboard/apps/recommended">Recommended</DashboardInfo>
+          <DashboardInfo href="/dashboard/apps/saved">Saved</DashboardInfo>
           <DashboardInfo href="/dashboard/apps/applied">Applied</DashboardInfo>
         </div>
       </div>

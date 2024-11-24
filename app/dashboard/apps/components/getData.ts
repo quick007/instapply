@@ -1,6 +1,66 @@
 import { createClient } from "@/utils/supabase/server";
 
-export const getAppData = async (page: "rec" | "app" | "res") => {
+export const getAppData = async (page: "rec" | "sav" | "app") => {
+  const supabase = await createClient();
+  const {
+    data: { user },
+    error: userError,
+  } = await supabase.auth.getUser();
+
+  if (!user || userError) {
+    console.log(userError);
+    return null;
+  }
+
+  const { data: userData, error: userDataError } = await supabase
+    .from("profiles")
+    .select("*")
+    .eq("id", user.id)
+    .single();
+  const { data, error } = await supabase
+    .from("links")
+    .select("*, applied(*)")
+    .eq("parsed", true)
+    .eq("applied.user_id", user.id);
+
+  if (!data || error || !userData || userDataError) {
+    console.log(error, userDataError);
+    return null;
+  }
+
+	let r: typeof data = []
+
+  if (page === "rec") {
+    r = data.filter((v) => {
+      if (
+        v.applied.length === 0 &&
+        userData.languages &&
+        v.coding_lang &&
+        v.coding_lang.every(lang => userData.languages?.includes(lang))
+      ) {
+        return true;
+      }
+      return false;
+    });
+  }
+
+  if (page === "sav") {
+    r = data.filter(v => v.applied[0]?.saved)
+  }
+
+  if (page === "app") {
+    r = data.filter(v => v.applied[0] && !v.applied[0].saved)
+  }
+
+	if (r.length === 0) {
+		return undefined
+	}
+
+	return r
+};
+
+
+export const getStatsData = async () => {
   const supabase = await createClient();
   const {
     data: { user },
@@ -42,6 +102,14 @@ export const getAppData = async (page: "rec" | "app" | "res") => {
       }
       return false;
     });
+  }
+
+  if (page === "sav") {
+    r = data.filter(v => v.applied[0]?.saved)
+  }
+
+  if (page === "app") {
+    r = data.filter(v => v.applied[0] && !v.applied[0].saved)
   }
 
 	if (r.length === 0) {

@@ -1,11 +1,13 @@
 export default function ApplicationColumn({
   children,
+  className
 }: {
   children: React.ReactNode;
+  className?: string
 }) {
   return (
     <main
-      className={`text-primary-darkish mb-3 grow font-semibold py-1 px-4 flex flex-col gap-4`}
+      className={` font-semibold py-1 px-4 flex ${className}`}
     >
       {children}
     </main>

@@ -16,7 +16,7 @@ export default async function Page() {
   return (
     <>
       {data.map((data) => (
-        <ApplicationManager key={data.id} pos={data.job_title || ""} lan={data.coding_lang!} link={data.link} />
+        <ApplicationManager key={data.id} pos={data.job_title || ""} lan={data.coding_lang!} link={data.link} isHeading={false}/>
       ))}
     </>
   );
