@@ -28,37 +28,39 @@ export const getAppData = async (page: "rec" | "sav" | "app") => {
     return null;
   }
 
-	let r: typeof data = []
+  let r: typeof data = [];
 
   if (page === "rec") {
     r = data.filter((v) => {
       if (
         v.applied.length === 0 &&
         userData.languages &&
-        v.coding_lang &&
-        v.coding_lang.every(lang => userData.languages?.includes(lang))
+        v.coding_lang
       ) {
-        return true;
+        const knownLanguages = v.coding_lang.filter((lang) =>
+          userData.languages?.includes(lang)
+        );
+        return knownLanguages.length > v.coding_lang.length / 2;
+
       }
       return false;
     });
   }
 
   if (page === "sav") {
-    r = data.filter(v => v.applied[0]?.saved)
+    r = data.filter((v) => v.applied[0]?.saved);
   }
 
   if (page === "app") {
-    r = data.filter(v => v.applied[0] && !v.applied[0].saved)
+    r = data.filter((v) => v.applied[0] && !v.applied[0].saved);
   }
 
-	if (r.length === 0) {
-		return undefined
-	}
+  if (r.length === 0) {
+    return undefined;
+  }
 
-	return r
+  return r;
 };
-
 
 export const getStatsData = async () => {
   const supabase = await createClient();
@@ -88,7 +90,7 @@ export const getStatsData = async () => {
     return null;
   }
 
-	let r: typeof data = []
+  let r: typeof data = [];
 
   if (page === "rec") {
     r = data.filter((v) => {
@@ -105,16 +107,16 @@ export const getStatsData = async () => {
   }
 
   if (page === "sav") {
-    r = data.filter(v => v.applied[0]?.saved)
+    r = data.filter((v) => v.applied[0]?.saved);
   }
 
   if (page === "app") {
-    r = data.filter(v => v.applied[0] && !v.applied[0].saved)
+    r = data.filter((v) => v.applied[0] && !v.applied[0].saved);
   }
 
-	if (r.length === 0) {
-		return undefined
-	}
+  if (r.length === 0) {
+    return undefined;
+  }
 
-	return r
+  return r;
 };
