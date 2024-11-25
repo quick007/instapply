@@ -2,14 +2,14 @@
 
 import { useState, useTransition } from "react";
 import { updateProfile } from "./actions";
-import { Database, Tables } from "@/database.types";
+import { Database } from "@/database.types";
 import { redirect } from "next/navigation";
 
 export default function Form({data}: {data: Database["public"]["Tables"]["profiles"]["Row"]}) {
 	const [isPending, startTransition] = useTransition();
 	const [error, setError] = useState("")
 	const [saved, setSaved] = useState(false)
-
+  
 	function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
 		e.preventDefault();
 		const formData = new FormData(e.target as HTMLFormElement);
@@ -140,7 +140,7 @@ export default function Form({data}: {data: Database["public"]["Tables"]["profil
           <option value=""></option>
           <option value="no">I am not a protected veteran</option>
           <option value="yes">I identify as one or more of the classifications of a protected veteran</option>
-          <option value="decline">I don't wish to answer</option>
+          <option value="decline">I dont wish to answer</option>
         </select>
 
 				<label htmlFor="disability">Disability</label>

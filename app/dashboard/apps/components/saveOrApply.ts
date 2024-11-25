@@ -5,7 +5,6 @@ import { createClient } from "@/utils/supabase/server";
 const getData = async () => {
   const supabase = await createClient();
   const { data: { user }, error: userError } = await supabase.auth.getUser();
-
   if (!user || userError) {
     throw Error("Smth bad happened");
   }
@@ -25,20 +24,23 @@ export const savePosting = async (save: boolean, jobID: string) => {
       user_id: id,
     });
     if (error) {
-      throw Error("smth went wrong")
+      throw Error("smth went wrong");
     }
   } else {
-    const { error } = await supabase.from("applied").delete().eq("job_id", jobID).eq("user_id", id)
+    const { error } = await supabase.from("applied").delete().eq(
+      "job_id",
+      jobID,
+    ).eq("user_id", id);
 
     if (error) {
-      throw Error("whoopsie")
+      throw Error("whoopsie");
     }
   }
 };
 
 // true: upsert and saved is false
 // false: delete row
-export const appliedPosting = async (applied: true, jobID: string) => {
+export const appliedPosting = async (applied: boolean, jobID: string) => {
   const { supabase, id } = await getData();
 
   if (applied) {
@@ -48,13 +50,18 @@ export const appliedPosting = async (applied: true, jobID: string) => {
       user_id: id,
     });
     if (error) {
-      throw Error("smth went wrong")
+      throw Error("smth went wrong");
     }
   } else {
-    const { error } = await supabase.from("applied").delete().eq("job_id", jobID).eq("user_id", id)
+    const { error } = await supabase.from("applied").delete().eq(
+      "job_id",
+      jobID,
+    ).eq("user_id", id);
 
     if (error) {
-      throw Error("whoopsie")
+      throw Error("whoopsie");
     }
   }
+
+
 };

@@ -90,8 +90,6 @@ export const getStatsData = async () => {
     return null;
   }
 
-  let r: typeof data = [];
-
   stats.rec = data.filter((v) => {
     if (
       v.applied.length === 0 &&

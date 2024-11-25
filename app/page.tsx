@@ -3,7 +3,6 @@ import LoginButton from "./components/loginButton";
 import { createClient } from "@/utils/supabase/server";
 import Link from "next/link";
 import { Suspense } from "react";
-<script src="https://unpkg.com/split-type"></script>;
 <link rel="icon" href="/favicon.ico" />;
 
 export const metadata: Metadata = {

@@ -1,17 +1,19 @@
 import Link from "next/link";
 import ApplicationColumn from "./applicationColumn";
-import ClickSave from "./ClickSave";
-import ClickApply from "./ClickApply";
+import ClickSave from "./clickSave";
+import ClickApply from "./clickApply";
 
 export default function ApplicationManager({
     pos,
     lan,
     link,
+    id,
     isHeading,
 }: {
     pos: string;
     lan: string[];
     link: string;
+    id: string;
     isHeading: boolean;
 }) {
     return (
@@ -72,8 +74,8 @@ export default function ApplicationManager({
                 )
                 : (
                     <div className="flex items-center">
-                        <ClickSave id=""></ClickSave>
-                        <ClickApply id=""></ClickApply>
+                        <ClickSave id={id}></ClickSave>
+                        <ClickApply id={id}></ClickApply>
                     </div>
                 )}
         </div>

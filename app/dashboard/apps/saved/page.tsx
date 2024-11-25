@@ -13,7 +13,7 @@ export default async function Page() {
     return (
       <div className="flex justify-center items-center">
         <h1 className="bg-primary-verydark text-primary-light p-5 border-none rounded-full mt-24">
-          Once you save some jobs you found in the recommended tab they'll show up here!
+          Once you save some jobs you found in the recommended tab they will show up here!
         </h1>
       </div>
     );
@@ -28,6 +28,7 @@ export default async function Page() {
           lan={data.coding_lang!}
           link={data.link}
           isHeading={false}
+          id={data.id.toString()}
         />
       ))}
     </>

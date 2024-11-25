@@ -10,7 +10,7 @@ export default async function Profile() {
 		return redirect("/")
 	}
 
-	const { data, error } = await supabase.from("profiles").select("*").eq("id", user.id).single()
+	const { data } = await supabase.from("profiles").select("*").eq("id", user.id).single()
 
 	if (!data) {
 		return redirect("/")

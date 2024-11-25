@@ -133,7 +133,7 @@ export const updateProfile = async (
 	}
 
 	const supabase = await createClient();
-	const { data: { user }, error: userError } = await supabase.auth.getUser();
+	const { data: { user }} = await supabase.auth.getUser();
 
 	const { error } = await supabase.from("profiles").update({
 		first_name: data.firstName,
