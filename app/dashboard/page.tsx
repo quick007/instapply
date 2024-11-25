@@ -2,10 +2,12 @@ import { createClient } from "@/utils/supabase/server";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import DashboardInfo from "./components/dashboardInfo";
+import { getStatsData } from "./apps/components/getData";
 
 export default async function Page() {
   const supabase = await createClient();
   const { data: { user }, error } = await supabase.auth.getUser();
+  const stats = await getStatsData()
 
   if (error || !user) {
     return redirect("/");
@@ -41,15 +43,15 @@ export default async function Page() {
 
   return (
     <div className="flex items-center justify-center grow bg-gradient-to-t from-primary-darkish to-primary-light">
-      <div className="flex flex-col items-center gap-4">
+      <div className="flex flex-col items-center mb-20">
         <h1 className="text-4xl font-semibold text-primary-verydark">
           Hello, {data.first_name}!
         </h1>
-        <h2 className="text-primary-verydark">Let's continue with your applications!</h2>
+        <h2 className="text-primary-verydark mb-10">Let{"'"}s continue with your applications!</h2>
         <div className="flex justify-center gap-4 text-xl">
-          <DashboardInfo href="/dashboard/apps/recommended">Recommended</DashboardInfo>
-          <DashboardInfo href="/dashboard/apps/saved">Saved</DashboardInfo>
-          <DashboardInfo href="/dashboard/apps/applied">Applied</DashboardInfo>
+          <DashboardInfo href="/dashboard/apps/recommended" count={stats!.rec}>Recommended</DashboardInfo>
+          <DashboardInfo href="/dashboard/apps/saved" count={stats!.sav}>Saved</DashboardInfo>
+          <DashboardInfo href="/dashboard/apps/applied" count={stats!.app}>Applied</DashboardInfo>
         </div>
       </div>
     </div>
