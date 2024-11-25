@@ -140,7 +140,7 @@ export const updateProfile = async (
 		last_name: data.lastName,
 		email: data.email,
 		school: data.school,
-		languages: data.languages,
+		languages: data.languages as string[],
 		major: data.major,
 		degree: data.degree,
 		grad_year: data.gradYear,
