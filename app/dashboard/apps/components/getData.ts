@@ -75,7 +75,7 @@ export const getStatsData = async () => {
   }
 
   const { data: userData, error: userDataError } = await supabase
-    .from("profiles")
+    .from("applied")
     .select("*")
     .eq("id", user.id)
     .single();
