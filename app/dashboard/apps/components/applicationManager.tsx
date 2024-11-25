@@ -1,6 +1,7 @@
 import Link from "next/link";
 import ApplicationColumn from "./applicationColumn";
-
+import ClickSave from "./ClickSave";
+import ClickApply from "./ClickApply";
 
 export default function ApplicationManager({
   pos,
@@ -58,6 +59,7 @@ export default function ApplicationManager({
             ? <><ApplicationColumn className="w-24 text-left">Save</ApplicationColumn>
                 <ApplicationColumn className="w-24 text-center">Applied</ApplicationColumn></>
             : (<div className="flex items-center">
+            <ClickSave id=""></ClickSave>
             <button className="w-32 flex justify-start">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -74,6 +76,7 @@ export default function ApplicationManager({
                 />
               </svg>
             </button>
+            <ClickApply></ClickApply>
             <button className="w-20 flex justify-start">
               <svg
                 xmlns="http://www.w3.org/2000/svg"

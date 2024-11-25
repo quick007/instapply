@@ -41,7 +41,6 @@ export const getAppData = async (page: "rec" | "sav" | "app") => {
           userData.languages?.includes(lang)
         );
         return knownLanguages.length > v.coding_lang.length / 2;
-
       }
       return false;
     });
@@ -63,6 +62,7 @@ export const getAppData = async (page: "rec" | "sav" | "app") => {
 };
 
 export const getStatsData = async () => {
+  const stats = { rec: 0, sav: 0, app: 0 };
   const supabase = await createClient();
   const {
     data: { user },
@@ -75,7 +75,7 @@ export const getStatsData = async () => {
   }
 
   const { data: userData, error: userDataError } = await supabase
-    .from("applied")
+    .from("profiles")
     .select("*")
     .eq("id", user.id)
     .single();
@@ -92,31 +92,23 @@ export const getStatsData = async () => {
 
   let r: typeof data = [];
 
-  if (page === "rec") {
-    r = data.filter((v) => {
-      if (
-        v.applied.length === 0 &&
-        userData.languages &&
-        v.coding_lang &&
-        userData.languages.some((langauge) => v.coding_lang?.includes(langauge))
-      ) {
-        return true;
-      }
-      return false;
-    });
-  }
+  stats.rec = data.filter((v) => {
+    if (
+      v.applied.length === 0 &&
+      userData.languages &&
+      v.coding_lang
+    ) {
+      const knownLanguages = v.coding_lang.filter((lang) =>
+        userData.languages?.includes(lang)
+      );
+      return knownLanguages.length > v.coding_lang.length / 2;
+    }
+    return false;
+  }).length;
 
-  if (page === "sav") {
-    r = data.filter((v) => v.applied[0]?.saved);
-  }
+  stats.sav = data.filter((v) => v.applied[0]?.saved).length;
 
-  if (page === "app") {
-    r = data.filter((v) => v.applied[0] && !v.applied[0].saved);
-  }
+  stats.app = data.filter((v) => v.applied[0] && !v.applied[0].saved).length;
 
-  if (r.length === 0) {
-    return undefined;
-  }
-
-  return r;
+  return stats;
 };
