@@ -4,7 +4,7 @@ import Link from "next/link";
 import { AnimatePresence, motion } from "motion/react";
 import React, { useState } from "react";
 
-export function NotificationContent() {
+function NotificationContent() {
   return (
     <div className="w-40 bg-white border-black p-6 shadow-xl">
       <div className="mb-3 space-y-3">
